@@ -5,7 +5,9 @@ pipeline {
 
         stage('Clone Code') {
             steps {
-                git 'https://github.com/pradeepkumar-devops/myapp.git'
+                git branch: 'main',
+                    credentialsId: 'github-credentials',
+                    url: 'https://github.com/pradeepkumar-devops/myapp.git'
             }
         }
 
